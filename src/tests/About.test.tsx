@@ -3,10 +3,10 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { About } from '../pages';
 
-tes('Teste se a página contém as informações sobre a Pokédex.', () => {
+test('Teste se a página contém as informações sobre a Pokédex.', () => {
   render(<About />, { wrapper: BrowserRouter });
 
-  expect(screen.getByRole('h2', { name: /About Pokédex/i }));
+  expect(screen.getByRole('heading', { name: 'About Pokédex' }));
   const parag = screen.getAllByRole('p');
   expect(parag).toHaveLength(2);
 

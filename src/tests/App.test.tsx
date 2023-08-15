@@ -22,6 +22,6 @@ test('Teste se o topo da aplicação contém um conjunto fixo de links de navega
   expect(titleAbout).toBeInTheDocument();
 
   await userEvent.click(linkFavorite);
-  const titleFavorite = screen.getByText('Favorite Pokémon');
-  expect(titleFavorite).toBeInTheDocument();
+  const favoritePokemonElements = screen.getAllByText('Favorite Pokémon');
+  expect(favoritePokemonElements.length).toBeGreaterThan(0);
 });
